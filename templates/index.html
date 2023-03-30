@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+<head>
+    <title>RegEX</title>
+</head>
+<body>
+    <style> div {text-align: center;} </style>
+<div>
+    <h1>Welcome to Regex Application</h1>
+
+    <form action = "" method="post">
+        <label>String</label><br>
+        <textarea name="txt" placeholder="Enter String"></textarea><br><br>
+
+        <label>Regex</label><br>
+        <input type='text' name="reg_exp" placeholder="Enter Regex"><br><br>
+
+        <button> Submit </button>
+    </form>
+    <!-- Displaying Variables on the frontend-->
+    <h2>For String = {{t}} and Regex = {{reg}}</h2> 
+   
+
+    {% if count>0 %}
+    <h2> Total Matches = {{count}} </h2>
+    <h2> Matches: </h2>
+    {% for match in matches %}
+        {{match}}<br>
+    {% endfor %}
+    {% elif count == -1 %}
+    {% else %}
+    <h2> No Match Found!!! </h2>
+    {% endif %}
+</div>
+    
+</body>
+</html>
